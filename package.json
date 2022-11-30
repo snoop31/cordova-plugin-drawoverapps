@@ -1,7 +1,8 @@
 {
   "name": "cordova-plugin-drawoverapps",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Android Cordova Plugin that uses draw over all apps feasure to display a Web view",
+  "license": "MIT",
   "cordova": {
     "id": "cordova-plugin-drawoverapps",
     "platforms": [
@@ -10,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ahmedwahba/cordova-plugin-drawoverapps.git"
+    "url": "git+https://github.com/snoop31/cordova-plugin-drawoverapps.git"
   },
   "keywords": [
     "cordova",
