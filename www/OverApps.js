@@ -22,8 +22,26 @@ THE SOFTWARE.
 var nooperation = function () { };
 
 module.exports = {
-    checkPermission: function (successCallback, failureCallback) {
-        cordova.exec(successCallback, failureCallback, 'DrawOverApps', 'checkPermission', []);
+// --------------- OVER APP ------------------
+    checkOverAppPermission: function (successCallback, failureCallback) {
+      cordova.exec(successCallback, failureCallback, 'DrawOverApps', 'checkOverAppPermission', []);
+    },
+    requestOverAppPermission: function (successCallback, failureCallback) {
+        cordova.exec(successCallback, failureCallback, 'DrawOverApps', 'requestOverAppPermission', []);
+    },
+    openOverAppPermission: function (successCallback, failureCallback) {
+        cordova.exec(successCallback, failureCallback, 'DrawOverApps', 'openOverAppPermission', []);
+    },
+// ---------------- BATTERY ------------------
+    checkBatteryOptimization: function (successCallback, failureCallback) {
+        cordova.exec(successCallback, failureCallback, 'DrawOverApps', 'checkBatteryOptimization', []);
+    },
+    requestBatteryOptimization: function (successCallback, failureCallback) {
+        cordova.exec(successCallback, failureCallback, 'DrawOverApps', 'requestBatteryOptimization', []);
+    },
+// ---------------- NOTIFICATION --------------
+    openNotificationSettings: function (successCallback, failureCallback) {
+        cordova.exec(successCallback, failureCallback, 'DrawOverApps', 'openNotificationSettings', []);
     },
     startOverApp: function (options,successCallback, failureCallback) {
         cordova.exec(successCallback, failureCallback, 'DrawOverApps', 'open', [ options ]);
