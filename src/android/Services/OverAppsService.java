@@ -72,7 +72,7 @@ import android.content.res.Resources;
      ServiceParameters serviceParameters;
      private GestureDetector gestureDetector;
      public static final String CHANNEL_ID = "overappservice";
-
+     private static final int FLAG_MUTABLE = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ? PendingIntent.FLAG_MUTABLE : 0;
 
      @Override
      public IBinder onBind(Intent intent) {
@@ -84,8 +84,7 @@ import android.content.res.Resources;
      public int onStartCommand(Intent intent, int flags, int startId) {
        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
          createNotificationChannel();
-         PendingIntent pendingIntent = PendingIntent.getActivity(this,
-                 0, intent, 0);
+         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT | FLAG_MUTABLE);
 
          Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                  .setContentTitle("Инфо-кнопка")
